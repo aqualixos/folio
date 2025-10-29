@@ -7,12 +7,13 @@
 }
 
 .darkmode {
-    --base-color: #1e1e1e;
-    --base-variant: #2c2c2c;
-    --text-color: #ddd;
-    --primary-color: #9a7fd1;
-    --secondary-color: #cbb3e0;
+  --base-color: #121212;
+  --base-variant: #1f1f1f;
+  --text-color: #eee;
+  --primary-color: #b39ddb;
+  --secondary-color: #d1b4f0;
 }
+
 
 /* Reset */
 * {
@@ -22,9 +23,21 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+body, header, main, aside, footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
     background: var(--base-color);
     color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.darkmode {
+  background-color: #121212;
+  color: #f2f2f2;
 }
 
 a {
@@ -142,7 +155,7 @@ aside.sidebar {
     background: var(--base-variant);
     padding: 25px;
     border-radius: 8px;
-    border: 1px solid --base-variant;
+    border: 1px solid var(--base-variant);
 }
 
 aside .profile-pic {
@@ -227,6 +240,7 @@ main .tabs {
     gap: 25px;
     margin-bottom: 25px;
     border-bottom: 1px solid #ddd;
+    transition: all 0.2s ease-in-out;
 }
 
 main .tabs button {
@@ -240,7 +254,7 @@ main .tabs button {
     color: var(--secondary-color);
 }
 
-main .tabs button.active {
+main .tabs button.active, button:hover {
     border-color: var(--secondary-color);
     color: var(--primary-color);
 }
@@ -335,7 +349,6 @@ footer {
     border-top: 1px solid var(--base-variant);
 }
 
-/* Scrollbar for posts if necessary */
 main.content::-webkit-scrollbar {
     width: 7px;
 }
@@ -343,4 +356,29 @@ main.content::-webkit-scrollbar {
 main.content::-webkit-scrollbar-thumb {
     background: var(--secondary-color);
     border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+
+  aside.sidebar {
+    width: 100%;
+  }
+
+  main.content {
+    width: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  header input[type="search"] {
+    width: 100%;
+  }
 }

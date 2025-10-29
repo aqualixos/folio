@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>folio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Página pessoal de Vani" />
+    <title>Folio</title>
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
+
 
 <body class="" id="home">
     <header>
@@ -19,14 +22,14 @@
         </nav>
         <div>
             <input type="search" placeholder="Search" />
-            <button class="post-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="size-6">
+            <button class="post-btn" aria-label="Pesquisar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                     <path fill-rule="evenodd"
                         d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
                         clip-rule="evenodd" />
                 </svg>
             </button>
-            <button id="theme-switcher">
+            <button id="theme-switcher" aria-label="Alternar tema">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                     <path fill-rule="evenodd"
                         d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
@@ -51,12 +54,12 @@
             <h2 class="username">Vani</h2>
             <p class="handle">@avendayismo</p>
             <div class="bio">
-                She/him | Cancer | ISTP<br />
+                Ela/dele | Cancer | ISTP<br />
                 Obsessed with Alien Stage and HoyoGames! Hungry 24/7. Forever gacha hell slave.
             </div>
 
             <div>
-                <h3 class="section-title">Best Friends</h3>
+                <h3 class="section-title">Pobrinhos</h3>
                 <ul class="friends">
                     <li><img src="img/icon.png" alt="Lui" />Lui @knzushi</li>
                     <li><img src="img/icon.png" alt="Reno" />Reno @taeuismo</li>
@@ -64,7 +67,7 @@
             </div>
 
             <div>
-                <h3 class="section-title">Current Obsessions</h3>
+                <h3 class="section-title">Amores</h3>
                 <ul class="current-obs">
                     <li>#AlienStage</li>
                 </ul>
@@ -72,13 +75,14 @@
         </aside>
 
         <main class="content">
-            <div class="tabs">
-                <button class="active">Posts</button>
-                <button>Anime</button>
-                <button>About</button>
-                <button>Portfolio</button>
-                <button>Claims</button>
+            <div class="tabs" role="tablist">
+                <button class="active" role="tab" aria-selected="true">Posts</button>
+                <button role="tab">Anime</button>
+                <button role="tab">Sobre</button>
+                <button role="tab">Portfólio</button>
+                <button role="tab">Claims</button>
             </div>
+
 
             <section class="about-me">
                 <h3>POSTS</h3>
@@ -92,7 +96,6 @@
                     mauris. Vivamus blandit lacus non purus molestie, eget euismod massa posuere. In finibus quam dui,
                     in porttitor elit auctor vel. Donec quis risus quis dui iaculis dignissim.
                 </p>
-                <img src="img/icon.png" alt="Dancing character" />
             </section>
 
             <!-- Sample Posts -->
@@ -101,7 +104,7 @@
                     <img class="post-img" src="img/icon.png" alt="Aamon Chevalier" />
                     <div class="post-info">
                         <div class="post-title">Aamon Chevalier</div>
-                        <div class="post-tags">Element: Dark | Race: Human | Specialty: Saber | Style: Attack</div>
+                        <div class="post-tags"></div>
                     </div>
                     <div class="post-time"></div>
                 </div>
@@ -112,18 +115,20 @@
                     <img class="post-img" src="img/icon.png" alt="Asmodeus Chevalier" />
                     <div class="post-info">
                         <div class="post-title">Asmodeus Chevalier</div>
-                        <div class="post-tags">Element: Dark | Race: Pritmal | Specialty: Saber | Style: Special</div>
+                        <div class="post-tags"></div>
                     </div>
                     <div class="post-time"></div>
                 </div>
             </article>
         </main>
+    </div> <!-- fecha .container -->
 
-        <footer id="page2">
-            &copy; 2025 Avendayismo
-        </footer>
+    <footer id="page2">
+        &copy; 2025 Avendayismo
+    </footer>
 
-        <div id="page3"></div>
+    <div id="page3"></div>
+
 
 </body>
 
