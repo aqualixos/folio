@@ -1,0 +1,346 @@
+:root {
+    --base-color: #faf9f8;
+    --base-variant: #c2b9b6;
+    --text-color: #333;
+    --primary-color: #5c4c8a;
+    --secondary-color: #b88fbd;
+}
+
+.darkmode {
+    --base-color: #1e1e1e;
+    --base-variant: #2c2c2c;
+    --text-color: #ddd;
+    --primary-color: #9a7fd1;
+    --secondary-color: #cbb3e0;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--base-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    background: var(--base-color);
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav a {
+    display: flex;
+    list-style-type: none;
+    gap: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.nav a.active,
+.nav a:hover {
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+header input[type="search"] {
+    padding: 5px 10px;
+    border: 1px solid var(--base-variant);
+    border-radius: 18px;
+    font-size: 0.9rem;
+    width: 180px;
+    margin-right: 15px;
+}
+
+header button.post-btn {
+    background: var(--secondary-color);
+    border: none;
+    color: var(--base-color);
+    padding: 6px 15px;
+    font-weight: bold;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.post-btn svg {
+    width: 100%;
+    height: 20px;
+}
+
+header button.post-btn:hover {
+    background: var(--secondary-color);
+}
+
+#theme-switcher {
+    height: 100%;
+    width: 40px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switcher svg {
+    fill: var(--base-color);
+}
+
+#theme-switcher svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switcher svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switcher svg:last-child {
+    display: block;
+}
+
+/* Banner Image */
+.banner {
+    width: 100%;
+    height: 220px;
+    background: url('img/banner.jpg') center/cover no-repeat;
+    position: relative;
+}
+
+/* Container for sidebar + main content */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 30px;
+}
+
+/* Sidebar */
+aside.sidebar {
+    flex: 1 1 280px;
+    background: var(--base-variant);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid --base-variant;
+}
+
+aside .profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--secondary-color);
+    margin: 0 auto 20px;
+}
+
+aside .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+aside h2.username {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+aside p.handle {
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+aside .bio {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+aside .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 9px;
+    border-bottom: 1px solid var(--base-variant);
+    padding-bottom: 5px;
+}
+
+/* Friends list */
+aside .friends,
+aside .current-obs {
+    list-style: none;
+    padding-left: 0;
+}
+
+aside .friends li,
+aside .current-obs li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+aside .friends li img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Main content */
+main.content {
+    flex: 2 1 700px;
+    background: var(--base-color);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 1px 1px 18px var(--primary-color);
+}
+
+/* Tab navigation */
+main .tabs {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+main .tabs button {
+    background: none;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+main .tabs button.active {
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* About me section */
+.about-me {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.about-me h3 {
+    font-weight: 900;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.about-me p {
+    color: var(--secondary-color);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 15px;
+}
+
+.about-me small {
+    font-size: 0.85rem;
+    color: #555;
+    white-space: pre-line;
+}
+
+.about-me img {
+    float: right;
+    width: 110px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/* Posts */
+.post {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.post-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.post-time {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+.post-img {
+    width: 80px;
+    border-radius: 6px;
+}
+
+.post-info {
+    flex-grow: 1;
+}
+
+.post-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.post-tags {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-bottom: 6px;
+}
+
+.post-data div {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 30px 0 15px;
+    background: var(--base-color);
+    padding: 10px;
+    border-top: 1px solid var(--base-variant);
+}
+
+/* Scrollbar for posts if necessary */
+main.content::-webkit-scrollbar {
+    width: 7px;
+}
+
+main.content::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
